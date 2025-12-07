@@ -1,0 +1,609 @@
+/* style.css - Estilos completos para la página index.php */
+
+:root {
+    --color-primary: #1e3a8a; /* Azul Oscuro */
+    --color-secondary: #3b82f6; /* Azul Claro */
+    --color-accent: #10b981; /* Verde/Cian para acentos */
+    --color-text-dark: #1f2937;
+    --color-text-light: #f9fafb;
+    --color-background-light: #f9fafb;
+    --color-background-dark: #111827;
+    --color-card-background: #ffffff;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-background-light);
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-secondary);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+/* --- Utilities & Layout --- */
+
+.section-container {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Animación de Fade-In */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- HEADER / HERO SECTION --- */
+
+.hero {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-text-light);
+    padding: 100px 5% 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.main-nav a {
+    color: var(--color-text-light);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--color-text-light); /* Evitar cambio de color en hover */
+}
+
+.admin-link {
+    background-color: var(--color-accent);
+    color: var(--color-text-dark) !important;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.admin-link:hover {
+    background-color: #0c9b68;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-ctas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button.primary {
+    background-color: var(--color-accent);
+    color: var(--color-text-dark);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    background-color: #0c9b68;
+    color: var(--color-text-light);
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: var(--color-text-light);
+    border: 2px solid var(--color-text-light);
+}
+
+.cta-button.secondary:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- INFO SECTION (¿Qué es la IA?) --- */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background-color: var(--color-card-background);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 5px solid var(--color-primary);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.info-card h3 {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.btn-card {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 700;
+    color: var(--color-secondary);
+}
+
+/* --- TIPOS SECTION --- */
+
+.tipos-section {
+    background-color: #eef2ff; /* Fondo ligeramente diferente */
+}
+
+.tipos-modulos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.tipo-modulo {
+    background-color: var(--color-card-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-bottom: 3px solid var(--color-accent);
+}
+
+.tipo-modulo h4 {
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* --- HISTORY / TIMELINE SECTION --- */
+
+.timeline-section {
+    background-color: var(--color-background-light);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Línea central */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--color-primary);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.event {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+/* Puntos de evento */
+.event::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: var(--color-accent);
+    border: 3px solid var(--color-primary);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Eventos a la izquierda */
+.timeline .event:nth-child(odd) {
+    left: 0;
+    text-align: right;
+    padding-right: 60px;
+}
+.timeline .event:nth-child(odd)::after {
+    right: -7.5px;
+}
+
+/* Eventos a la derecha */
+.timeline .event:nth-child(even) {
+    left: 50%;
+    padding-left: 60px;
+}
+.timeline .event:nth-child(even)::after {
+    left: -7.5px;
+}
+
+.event span {
+    font-weight: 700;
+    color: var(--color-secondary);
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* --- CATALOGO SECTION (Herramientas IA) --- */
+
+.catalogo-section {
+    background-color: #f0f4f8;
+}
+
+.catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.producto-card {
+    background-color: var(--color-card-background);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.producto-header {
+    position: relative;
+}
+
+.producto-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.categoria-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.producto-body {
+    padding: 15px 20px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-body h3 {
+    color: var(--color-text-dark);
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-top: 0;
+}
+
+.descripcion {
+    font-size: 0.95rem;
+    color: #4b5563;
+    flex-grow: 1;
+}
+
+.precio {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 10px;
+    color: var(--color-text-dark);
+}
+
+.price-tag {
+    color: var(--color-accent);
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+/* Formulario de Compra en el Catálogo */
+.form-compra {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.form-compra input[type="text"],
+.form-compra input[type="email"] {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.btn-comprar {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-comprar:hover {
+    background-color: #2563eb;
+}
+
+.error-message, .no-products {
+    grid-column: 1 / -1; /* Ocupa todo el ancho */
+    text-align: center;
+    padding: 20px;
+    background-color: #fee2e2;
+    color: #ef4444;
+    border: 1px solid #f87171;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* --- REGISTRO / FORMS SECTION --- */
+
+.form-section {
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.form-alumnos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    max-width: 600px;
+    margin: 20px auto 0;
+    background-color: var(--color-card-background);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form-alumnos input,
+.form-alumnos textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+.form-alumnos label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: 600;
+    grid-column: span 2; /* Para que las etiquetas ocupen todo el ancho si es necesario */
+}
+
+/* Estilo específico para los campos en dos columnas */
+/* He cambiado esto para usar la clase 'form-alumnos' en la sección de contacto,
+   así que es mejor asignar a los inputs específicos por tipo/orden */
+.form-alumnos input[type="text"],
+.form-alumnos input[type="email"] {
+    grid-column: span 1;
+}
+
+/* Ajuste para que el email ocupe todo el ancho en el form de alumnos, si aplica */
+.form-alumnos > input[type="email"] {
+    grid-column: span 2; 
+}
+
+
+/* Ajuste para el formulario de Contacto de una columna */
+.form-alumnos[style*="grid-template-columns: 1fr;"] input,
+.form-alumnos[style*="grid-template-columns: 1fr;"] textarea,
+.form-alumnos[style*="grid-template-columns: 1fr;"] label {
+    grid-column: span 1 !important; 
+}
+
+
+.form-alumnos .btn-submit {
+    grid-column: 1 / -1; /* El botón ocupa todo el ancho */
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.form-alumnos .btn-submit:hover {
+    background-color: #1e40af;
+}
+
+/* --- FOOTER --- */
+
+footer {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* --- Back to Top Button --- */
+
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--color-accent);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+#backToTop:hover {
+    background-color: #0c9b68;
+}
+
+
+/* --- Responsive Design --- */
+
+@media (max-width: 900px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .main-nav {
+        gap: 1rem;
+    }
+    
+    .timeline::after {
+        left: 30px;
+    }
+
+    .event {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 15px;
+        text-align: left !important;
+    }
+    
+    .timeline .event:nth-child(even),
+    .timeline .event:nth-child(odd) {
+        left: 0;
+        padding-left: 60px;
+        padding-right: 15px;
+    }
+
+    .event::after {
+        left: 22px !important;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding-top: 80px;
+    }
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-ctas {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .cta-button {
+        width: 80%;
+        max-width: 300px;
+    }
+    
+    .form-alumnos {
+        grid-template-columns: 1fr;
+    }
+    /* Asegurar que todos los campos del formulario ocupen el ancho completo en móvil */
+    .form-alumnos input,
+    .form-alumnos textarea,
+    .form-alumnos label {
+        grid-column: span 1 !important;
+    }
+}
